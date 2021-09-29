@@ -13,6 +13,7 @@ public class KeycloakServiceInterceptor implements HandlerInterceptor {
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
+		
 		String origin = response.getHeader("Access-Control-Allow-Origin");
 		if(origin == null) {
 			response.setHeader("Access-Control-Allow-Origin", request.getHeader("Origin"));
